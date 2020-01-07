@@ -1,11 +1,4 @@
-#!/usr/bin/env python3
-# -*- coding: utf-8 -*-
-"""
-Created on Sat Jan  4 02:12:23 2020
-
-@author: toriliang
-"""
-
+# Import packages.
 import random
 import operator
 import matplotlib
@@ -29,25 +22,25 @@ print(td_ys)
 print(td_xs)
 
     
-num_of_agents = 10
-num_of_iterations = 100
-neighbourhood = 20
-agents = []
-environment = []
+num_of_agents = 10      # Make a num_of_agents variable and assign it to 10.
+num_of_iterations = 100 # Make a num_of_iterations variable and assign it to 100.
+neighbourhood = 20      # Make a neighbourhood variable and assign it to 20.
+agents = []             # Creat agents list.
+environment = []        # Creat environment list.
 
-
+# Make animation properties.
 fig = matplotlib.pyplot.figure(figsize=(7, 7))
 ax = fig.add_axes([0, 0, 1, 1])
 #xlim = 10
 #ylim = 10
 #frames, = ax.plot(x, y)
 
-
+# To load in.txt file.
 with open("in.txt") as f:
     data = f.read().splitlines() 
-
+# The downloaded text format is not standard, so needs to change.
     for row in data:
-        rowlist = []
+        rowlist = []   # Creat rowlist list.
         for value in row.split(','):
             if value[-1] == '\\':
                 value1 = value[0:(len(value)-1)]
@@ -62,7 +55,7 @@ for line in agents:
 
 
 
-# Make the agents.
+#  Make the agents by putting into a for-loop.
 for i in range(num_of_agents):
     y = int(td_ys[i].text)
     x = int(td_xs[i].text)
@@ -70,51 +63,52 @@ for i in range(num_of_agents):
     
     #matplotlib.pyplot.show(environment) 
 
+# Start condition.
 carry_on = True
 
-def update(frame_number):
-    fig.clear()   
-    global carry_on
+# Define function to update data points.
+def update(frame_number):   # Sets the number of animation frames.
+    fig.clear()   # Clear a figure.
+    global carry_on # carry_on is a global variable.
     
-    # Move the agents.
+    # Move the agents by putting into nest for-loops.
     for j in range(num_of_iterations):
         for i in range(num_of_agents):
             agents[i].move("frame_number")
             agents[i].eat()
             agents[i].share_with_neighbours()
              
-    # Set stopping Animation condition.
-    #if random.random() < 0.1:
-        #carry_on = False
-        #print("stopping condition")
+    # Displays the random points obtained with the for-loop.
     for i in range(num_of_agents):
         matplotlib.pyplot.xlim(0, 100)
         matplotlib.pyplot.ylim(0, 100)
         matplotlib.pyplot.imshow(environment)  
-        matplotlib.pyplot.scatter(agents[i].x,agents[i].y)   
+        matplotlib.pyplot.scatter(agents[i].x,agents[i].y)   # Make scatter plot.
    
 #matplotlib.pyplot.title(label = "Scatter Plot Animation")
-    
+
+# Define a generator function.
 def gen_function(b = [0]):
     a = 0
     global carry_on # Display clearly, even if it is not assigned.
     while (a < 10) & (carry_on) :
         yield a			# Returns control and waits next call.
         a = a + 1
-       
+        
+# Use for-each loop iterator to put out agents.        
 for self in agents:
         for agent in agents:
-            agentframework.Agent.distance_between(self, agent) 
+            agentframework.Agent.distance_between(self, agent) # Calling the method from agentframework.py.
     
         
-  # Run the animation.
+# Run the animation.
 def run():
-    ani = matplotlib.animation.FuncAnimation(fig, update, frames=gen_function, repeat=False)
+    ani = matplotlib.animation.FuncAnimation(fig, update, frames=gen_function, repeat=False) #stopping condition.
     #ani.save("AAA")
     print(ani)        
   
 
-#creat main application window
+#creat main application window.
 root = tkinter.Tk()
 #set the properties window
 
