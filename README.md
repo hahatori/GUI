@@ -2,7 +2,7 @@
 
 Use animation functions of matplotlib package, get it animated.
 
-This project including [in.txt](https://github.com/hahatori/Animation/blob/master/in.txt), [agentframework.py](https://github.com/hahatori/Animation/blob/master/agentframework.py) and [model.py](https://github.com/hahatori/Animation/blob/master/model.py).
+This project including [in.txt](https://github.com/hahatori/GUI/blob/master/in.txt), [data.py](https://github.com/hahatori/GUI/blob/master/data.py), [agentframework.py](https://github.com/hahatori/GUI/blob/master/agentframework.py) and [model.py](https://github.com/hahatori/GUI/blob/master/model.py).
 
 ## Contents
 
@@ -21,23 +21,18 @@ This project including [in.txt](https://github.com/hahatori/Animation/blob/maste
 
 **Model** code can creat models for connecting developers and users.
 
-### Animation
+### Tkinter
 
-### The core parameters of the **animation** are ```frames``` and ```func```.
+**Tkinter** is the standard GUI library for Python which is built into the Python installation package. Python uses Tkinter to quickly create GUI applications.
 
-**Frames** are the range of frames in the animation and are essentially a data generator.
+```sh
+$ import tkinter
+```
 
-**Func** is a callback function that is called every time it is updated, so we just need to update the number in the figure in this function.
+### Tkinter components
 
-In fact, **frames** determine the range of values for the entire animated frame, iterating once in the interval and then passing the value to **func** until the entire frames iteration is complete.
+There are currently 15 Tkinter components, such as **buttons**, **labels**, and **Canvas**.
 
-### def update(frame_number):
-
-Define ```update``` method to update data in the drawn graph, sets the number of animation frames.
-
-### def gen_function():
-
-Define a ```gen_function``` function which is a generator function. After execution，pass the results to the update function.
 
 ## Theoretical Results
 
@@ -49,6 +44,6 @@ The model refers to methods such as ```eat``` ，```move``` and ```share_with_ne
 
 ## Issues
 
-1. Using ```anim.save('test_animation.gif',writer='imagemagick')``` to save **test_animation.gif** file.
+1. 
 
-2. When you want to stop the animation, use the following statement ```animation = matplotlib.animation.FuncAnimation(fig, update, interval=1, repeat=False, frames=num_of_iterations)```
+2. 
