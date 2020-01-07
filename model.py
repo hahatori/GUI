@@ -6,13 +6,14 @@ import agentframework
 import csv
 import matplotlib.animation 
 import matplotlib.pyplot
-import tkinter
-import requests
-import bs4
+import tkinter  
+import requests  # For scrape web data.
+import bs4       # Import Beautiful Soup to scrap data online.
 import data
 
-matplotlib.use('TkAgg')
+matplotlib.use('TkAgg') # Backend.
 
+# Scrape web data and use it to initialise the model.
 r = requests.get('http://www.geog.leeds.ac.uk/courses/computing/practicals/python/agent-framework/part9/data.html')
 content = r.text
 soup = bs4.BeautifulSoup(content, 'html.parser')
@@ -31,9 +32,6 @@ environment = []        # Creat environment list.
 # Make animation properties.
 fig = matplotlib.pyplot.figure(figsize=(7, 7))
 ax = fig.add_axes([0, 0, 1, 1])
-#xlim = 10
-#ylim = 10
-#frames, = ax.plot(x, y)
 
 # To load in.txt file.
 with open("in.txt") as f:
@@ -52,7 +50,6 @@ with open("in.txt") as f:
 for line in agents:
     f.write(line)
 #f.close()
-
 
 
 #  Make the agents by putting into a for-loop.
@@ -108,29 +105,27 @@ def run():
     print(ani)        
   
 
-#creat main application window.
+# Creat main application window.
 root = tkinter.Tk()
-#set the properties window
 
-root.title("My Model")
+# Set the properties of the window.
+root.wm_title("My Model") # Set window title.
 #root.geometry("800x800")
 #root.resizeable(width= True, height=True)
 #label = tkinter.Label(root, text ="ABC")
 
-
+# Creat a matplotlib canvas embedded within the window.
 canvas = matplotlib.backends.backend_tkagg.FigureCanvasTkAgg(fig, master=root)
 canvas._tkcanvas.pack(side=tkinter.TOP, fill=tkinter.BOTH, expand=1)
 #canvas.get_tk_widget().grid(column=0, row=1)
 
-
+# Build a menu on the window.
 menu_bar = tkinter.Menu(root)
 root.config(menu=menu_bar)
 model_menu = tkinter.Menu(menu_bar)
 menu_bar.add_cascade(label = "Model", menu = model_menu)
 model_menu.add_command(label="Run model", command = run)
 
-  
 
 #root.mainloop()
-
-tkinter.mainloop()
+tkinter.mainloop() # Inter loop.
