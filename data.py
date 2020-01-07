@@ -1,11 +1,3 @@
-#!/usr/bin/env python3
-# -*- coding: utf-8 -*-
-"""
-Created on Sat Jan  4 02:22:35 2020
-
-@author: toriliang
-"""
-
 import random
 
 f = open("data.html", "w")
