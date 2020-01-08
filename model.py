@@ -79,7 +79,8 @@ def update(frame_number):   # Sets the number of animation frames.
     for i in range(num_of_agents):
         matplotlib.pyplot.xlim(0, 100)
         matplotlib.pyplot.ylim(0, 100)
-        matplotlib.pyplot.imshow(environment)  
+        matplotlib.pyplot.imshow(environment) 
+        matplotlib.pyplot.title("Animation")
         matplotlib.pyplot.scatter(agents[i].x, agents[i].y)   # Make scatter plot.
    
 #matplotlib.pyplot.title(label = "Scatter Plot Animation")
