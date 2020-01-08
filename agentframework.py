@@ -8,11 +8,21 @@ class Agent():
     def __init__(self, environment, agents, neighbourhood, y, x): # 5 formal parameters.
         self.environment = environment   # Pass the environment list to the Agent's constructor.
         self.store = 0
-        self.y = random.randint(0,99)    # Generate a random number between 0 and 99 and assign it to y.
-        self.x = random.randint(0,99)    # Generate a random number between 0 and 99 and assign it to x.
+        self.y = y    # Assign external to y.
+        self.x = x    # Assign external to x.
         self.agents = agents    # Assigns externally passed parameter values to its own variables within the Agent class.
         self.neighbourhood = neighbourhood # Pass a value to instance.neighbourhood from externally parameter.
-             
+    
+    # Still run with missing y and x values.
+    if x == None:
+            self.x = random.randint(0,100) #use the function randint from random to create a set of random int from 0 to 300
+        else:
+            self.x = x   
+        if y == None:
+            self.y = random.randint(0,100)
+        else:
+            self.y = y
+            
     # Define the move method, use if...else statement and Torus to deal with boundary issues.
     def move(self, frame_number):
         
@@ -33,7 +43,7 @@ class Agent():
         self.store += 10 
         
     # Creat methods to calculate the distance to each of the other agents.
-    def share_with_neighbours(self):
+    def share_with_neighbours(self, neighbourhood):
         for agent in self.agents:
             dist = self.distance_between(agent)
             if dist <= self.neighbourhood:
@@ -48,10 +58,4 @@ class Agent():
         return (((self.x - agent.x)**2) + ((self.y - agent.y)**2))**0.5
    
 
-# Creat objects to test.
-#a = Agent("environment","agents","neighbourhood","y","x")
-#print(a)
-
-#a.move("frame_number")
-#print(a.y, a.x)
  
