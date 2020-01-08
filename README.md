@@ -53,9 +53,20 @@ $ from tkinter import *
   root.mainloop()
 ```
 
+### Canvas
+
+**Canvas** provides drawing for Tkinter. Its graphics components include lines, circles, pictures, and other controls.
+
+The Canvas control can draw graphical charts, edit graphics, and customize components for windows.
+
+```sh
+$ canvas = matplotlib.backends.backend_tkagg.FigureCanvasTkAgg(fig, master=root)
+canvas._tkcanvas.pack(side=tkinter.TOP, fill=tkinter.BOTH, expand=1)  # Display the components.
+```
+
 ## Theoretical Results
 
-The model refers to methods such as ```eat``` ，```move``` and ```share_with_neighbours``` from the **agentframework.py**, which are shown on the animation.
+Modify the IPython console to run to produce a separate window, called "My Model". The top left corner displays the window menu called "Model". Click on the menu displays a drop-down list named "Run model", continuing to click on it，displays an scatter plot animation.
 
 ## Actual Results
 
