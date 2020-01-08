@@ -21,7 +21,7 @@ This project including [in.txt](https://github.com/hahatori/GUI/blob/master/in.t
 
 **Model** code can creat models for connecting developers and users.
 
-### Tkinter
+### Canvas
 
 **Tkinter** is the standard GUI library for Python which is built into the Python installation package. Python uses Tkinter to quickly create GUI applications.
 
@@ -40,7 +40,7 @@ The model refers to methods such as ```eat``` ，```move``` and ```share_with_ne
 
 ## Actual Results
 
-![Animation](https://github.com/hahatori/Python_Assignment1/blob/master/GUI.mov)
+![Animation](https://github.com/hahatori/Python_Assignment1/blob/master/GUI1.mov)
 
 ## Issues
 
