@@ -5,7 +5,7 @@ import random
 class Agent():
     
     # Define the initialization method.
-    def __init__(self, environment, agents, neighbourhood, y, x): # 5 formal parameters.
+    def __init__(self, environment, y, x, agents, neighbourhood): # 5 formal parameters.
         self.environment = environment   # Pass the environment list to the Agent's constructor.
         self.store = 0
         self.y = y    # Assign external to y.
