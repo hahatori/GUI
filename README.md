@@ -40,7 +40,7 @@ The model refers to methods such as ```eat``` ，```move``` and ```share_with_ne
 
 ## Actual Results
 
-![Animation](https://github.com/hahatori/Python_Assignment1/blob/master/GUI1.mov)
+![GUI](https://github.com/hahatori/Python_Assignment1/blob/master/GUI2.mov)
 
 ## Issues
 
