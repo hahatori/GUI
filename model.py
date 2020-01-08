@@ -92,8 +92,7 @@ def gen_function(b = [0]):
         yield a			# Returns control and waits next call.
         a = a + 1
  
-"""
-# Use for-each loop iterator to put out agents.        
+"""        
 for self in agents:
         for agent in agents:
             agentframework.Agent.distance_between(self, agent) # Calling the method from agentframework.py.
@@ -111,7 +110,7 @@ root = tkinter.Tk()
 
 # Set the properties of the window.
 root.wm_title("My Model") # Set window title.
-#root.geometry("800x800")
+#root.geometry("800x800") # Set window size.
 #root.resizeable(width= True, height=True)
 #label = tkinter.Label(root, text ="ABC")
 
@@ -129,4 +128,4 @@ model_menu.add_command(label = "Run model", command = run)
 
 
 #root.mainloop()
-tkinter.mainloop() # Inter loop.
+tkinter.mainloop() # Inter loop. Keep the main window running and on display.
