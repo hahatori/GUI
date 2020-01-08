@@ -75,7 +75,7 @@ Modify the IPython console to run to produce a separate window, called "My Model
 
 ## Issues
 
-1. 
+1. **menu**, equivalent to a menu group \ menu bar, does not add other menus when the default is not displayed, only add other menus, will be displayed. To display menus, you must allow menu objects to be added in config for window objects to add menus, for example, ```root.config(menu=menu_bar)```. Menu has no text.
 
 2. Two windows appeared: **My Model** and **Figure 1**. Tried to remove the Figure 1 window, but failed.
 
