@@ -10,6 +10,7 @@ This project including [in.txt](https://github.com/hahatori/GUI/blob/master/in.t
 - [Theoretical Results](#theoretical-results)
 - [Actual Results](#actual-results)
 - [Issues](#issues)
+- [License](#license)
 
 ## Details
 
@@ -76,4 +77,10 @@ Modify the IPython console to run to produce a separate window, called "My Model
 
 1. 
 
-2. 
+2. Two windows appeared: **My Model** and **Figure 1**. Tried to remove the Figure 1 window, but failed.
+
+## License
+
+[MIT](https://github.com/hahatori/Python_Assignment1/blob/master/License)© Tori
+
+
