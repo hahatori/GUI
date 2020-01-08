@@ -49,7 +49,7 @@ with open("in.txt") as f:
 
 for line in agents:
     f.write(line)
-#f.close()
+f.close()
 
 
 #  Make the agents by putting into a for-loop.
@@ -91,12 +91,7 @@ def gen_function(b = [0]):
     while (a < num_of_agents) & (carry_on) :
         yield a			# Returns control and waits next call.
         a = a + 1
- 
-"""        
-for self in agents:
-        for agent in agents:
-            agentframework.Agent.distance_between(self, agent) # Calling the method from agentframework.py.
-"""    
+        
         
 # Run the animation.
 def run():
