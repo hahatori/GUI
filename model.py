@@ -56,7 +56,7 @@ for line in agents:
 for i in range(num_of_agents):
     y = int(td_ys[i].text)
     x = int(td_xs[i].text)
-    agents.append(agentframework.Agent(y, x, environment, agents, neighbourhood))
+    agents.append(agentframework.Agent(environment, y, x, agents, neighbourhood))
     
     #matplotlib.pyplot.show(environment) 
 
@@ -71,16 +71,16 @@ def update(frame_number):   # Sets the number of animation frames.
     # Move the agents by putting into nest for-loops.
     for j in range(num_of_iterations):
         for i in range(num_of_agents):
-            agents[i].move("frame_number")
+            agents[i].move()
             agents[i].eat()
-            agents[i].share_with_neighbours()
+            agents[i].share_with_neighbours(neighbourhood)
              
     # Displays the random points obtained with the for-loop.
     for i in range(num_of_agents):
         matplotlib.pyplot.xlim(0, 100)
         matplotlib.pyplot.ylim(0, 100)
         matplotlib.pyplot.imshow(environment)  
-        matplotlib.pyplot.scatter(agents[i].x,agents[i].y)   # Make scatter plot.
+        matplotlib.pyplot.scatter(agents[i].x, agents[i].y)   # Make scatter plot.
    
 #matplotlib.pyplot.title(label = "Scatter Plot Animation")
 
@@ -88,21 +88,22 @@ def update(frame_number):   # Sets the number of animation frames.
 def gen_function(b = [0]):
     a = 0
     global carry_on # Display clearly, even if it is not assigned.
-    while (a < 10) & (carry_on) :
+    while (a < num_of_agents) & (carry_on) :
         yield a			# Returns control and waits next call.
         a = a + 1
-        
+ 
+"""
 # Use for-each loop iterator to put out agents.        
 for self in agents:
         for agent in agents:
             agentframework.Agent.distance_between(self, agent) # Calling the method from agentframework.py.
-    
+"""    
         
 # Run the animation.
 def run():
     ani = matplotlib.animation.FuncAnimation(fig, update, frames=gen_function, repeat=False) #stopping condition.
     #ani.save("AAA")
-    print(ani)        
+    canvas.draw()       
   
 
 # Creat main application window.
@@ -115,8 +116,8 @@ root.wm_title("My Model") # Set window title.
 #label = tkinter.Label(root, text ="ABC")
 
 # Creat a matplotlib canvas embedded within the window.
-canvas = matplotlib.backends.backend_tkagg.FigureCanvasTkAgg(fig, master=root)
-canvas._tkcanvas.pack(side=tkinter.TOP, fill=tkinter.BOTH, expand=1)
+canvas = matplotlib.backends.backend_tkagg.FigureCanvasTkAgg(fig, master = root)
+canvas._tkcanvas.pack(side = tkinter.TOP, fill = tkinter.BOTH, expand=1)
 #canvas.get_tk_widget().grid(column=0, row=1)
 
 # Build a menu on the window.
@@ -124,7 +125,7 @@ menu_bar = tkinter.Menu(root)
 root.config(menu=menu_bar)
 model_menu = tkinter.Menu(menu_bar)
 menu_bar.add_cascade(label = "Model", menu = model_menu)
-model_menu.add_command(label="Run model", command = run)
+model_menu.add_command(label = "Run model", command = run)
 
 
 #root.mainloop()
