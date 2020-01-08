@@ -14,7 +14,7 @@ class Agent():
         self.neighbourhood = neighbourhood # Pass a value to instance.neighbourhood from externally parameter.
     
     # Still run with missing y and x values.
-    if x == None:
+        if x == None:
             self.x = random.randint(0,100) #use the function randint from random to create a set of random int from 0 to 300
         else:
             self.x = x   
