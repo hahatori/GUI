@@ -24,7 +24,7 @@ class Agent():
             self.y = y
             
     # Define the move method, use if...else statement and Torus to deal with boundary issues.
-    def move(self, frame_number):
+    def move(self):
         
         if random.random() < 0.5:
             self.x = (self.x + 1) % 100
